@@ -1,4 +1,4 @@
-/* Reset and base styles */
+/* Modern and Professional Styles */
 * {
     margin: 0;
     padding: 0;
@@ -6,9 +6,10 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: #333;
+    background-color: #f8f9fa;
 }
 
 /* Container */
@@ -20,97 +21,114 @@ body {
 
 /* Navigation */
 header {
-    background-color: #333;
+    background-color: #2c3e50;
     padding: 1rem 0;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
-}
-
-nav ul li {
-    margin: 0 1rem;
+    gap: 2rem;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 500;
     transition: color 0.3s ease;
+    font-size: 1.1rem;
 }
 
 nav ul li a:hover {
-    color: #00a8ff;
+    color: #3498db;
 }
 
 /* Hero section */
 .hero {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
     color: white;
+    padding: 6rem 0;
 }
 
 .hero h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
     margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    opacity: 0.9;
 }
 
 /* Sections */
 section {
     padding: 5rem 0;
+    background-color: white;
+}
+
+section:nth-child(even) {
+    background-color: #f8f9fa;
 }
 
 section h2 {
     text-align: center;
     margin-bottom: 3rem;
-    color: #333;
+    color: #2c3e50;
+    font-size: 2.5rem;
+    font-weight: 700;
 }
 
 /* Skills grid */
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
     padding: 2rem 0;
 }
 
 .skill-item {
-    background: #f8f9fa;
-    padding: 1.5rem;
-    border-radius: 8px;
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
     text-align: center;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-size: 1.2rem;
+    color: #2c3e50;
 }
 
 .skill-item:hover {
     transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
 /* Gallery section */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
+    gap: 2rem;
     padding: 1rem 0;
 }
 
 .gallery-item {
     position: relative;
     overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
+    aspect-ratio: 16/9;
 }
 
 .gallery-item:hover {
@@ -119,7 +137,7 @@ section h2 {
 
 .gallery-item img {
     width: 100%;
-    height: 300px;
+    height: 100%;
     object-fit: cover;
     display: block;
     transition: transform 0.3s ease;
@@ -131,17 +149,39 @@ section h2 {
 
 /* Contact section */
 #contact {
-    background-color: #f8f9fa;
+    background-color: #2c3e50;
+    color: white;
     text-align: center;
 }
 
+#contact h2 {
+    color: white;
+}
+
 .social-links {
-    margin-top: 2rem;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.social-link {
+    color: #2c3e50;
+    font-size: 24px;
+    transition: color 0.3s ease;
+    padding: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.social-link:hover {
+    color: #3498db;
+    transform: translateY(-3px);
 }
 
 /* Footer */
 footer {
-    background-color: #333;
+    background-color: #1a252f;
     color: white;
     text-align: center;
     padding: 2rem 0;
@@ -149,16 +189,17 @@ footer {
 
 /* Responsive design */
 @media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
     nav ul {
         flex-direction: column;
         text-align: center;
+        gap: 1rem;
     }
     
-    nav ul li {
-        margin: 0.5rem 0;
-    }
-    
-    .hero h1 {
+    section h2 {
         font-size: 2rem;
     }
 }
